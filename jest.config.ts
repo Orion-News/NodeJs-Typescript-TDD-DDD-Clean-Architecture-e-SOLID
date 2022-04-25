@@ -1,7 +1,6 @@
 export default {
   preset: '@shelf/jest-mongodb',
   roots: ['<rootDir>/src'],
-  collectCoverage: true,
   collectCoverageFrom: [ 
   '<rootDir>/src/**/*.ts', 
   '!<rootDir>/src/main/**', 
@@ -10,8 +9,6 @@ export default {
   '!**/test/**'
   ],
   coverageDirectory: "coverage",
-  coverageProvider: "babel",
-  testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
