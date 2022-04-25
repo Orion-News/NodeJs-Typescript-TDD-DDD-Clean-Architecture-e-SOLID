@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   preset: '@shelf/jest-mongodb',
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [ 
@@ -12,4 +12,4 @@ export default {
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
-};
+}
