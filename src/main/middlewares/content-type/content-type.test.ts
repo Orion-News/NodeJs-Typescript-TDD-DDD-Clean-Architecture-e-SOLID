@@ -8,9 +8,10 @@ describe('Content Type Middleware', () => {
     })
 
     
-    await request(app)
+    const req = await request(app)
       .get('/test_content_type')
       .expect('content-type', /json/)
+      console.log('debbuging', req)
   })
 
   test('Should return xml content type as json', async () => {
