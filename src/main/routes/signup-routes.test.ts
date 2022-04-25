@@ -25,6 +25,6 @@ describe('SignUp Routes', () => {
         email: 'geverson@mail.com',
         password: '123',
         passwordConfirmation: '123'
-      }).expect(404)
+      }).expect(200)
   })
 })
