@@ -17,8 +17,10 @@ export class LoginController implements Controller {
         return badRequest(error)
       }
       const { email, password } = httpRequest.body
-      const accessToken = await this.authentication.auth(email, password)
-      console.log('dfebuig: ', accessToken)
+      const accessToken = await this.authentication.auth({
+        email,
+        password
+      })
       if(!accessToken) {
         return unauthorized()
       }
