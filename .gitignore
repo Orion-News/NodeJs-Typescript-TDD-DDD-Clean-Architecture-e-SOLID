@@ -4,3 +4,4 @@ coverage
 *yarn-error.log
 *yarn.lock
 public
+globalConfig.json
