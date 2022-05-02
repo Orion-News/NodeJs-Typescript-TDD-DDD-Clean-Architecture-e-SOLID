@@ -72,7 +72,7 @@ const makeSut = (): SutTypes => {
     tokenGeneratorStub, 
     updateAcessTokenRepositoryStub
   )
-  
+
   return {
     sut,
     loadAccountByEmailRepositoryStub,
@@ -148,10 +148,19 @@ describe('DbAuthentication UseCase', () => {
     expect(acesstoken).toBe('any_token')
   })
 
-  test('Should call Update with correct id', async () => {
+  test('Should call UpdateAccessTokenRepository with correct values', async () => {
     const { sut, updateAcessTokenRepositoryStub } = makeSut()
     const updateSpy = jest.spyOn(updateAcessTokenRepositoryStub, 'update')
     await sut.auth(makeFakeAuthentication())
     expect(updateSpy).toHaveBeenCalledWith('any_id', 'any_token')
+  })
+
+  test('Should if throws UpdateAccessTokenRepository throws', () => {
+    const { sut, updateAcessTokenRepositoryStub } = makeSut()
+    jest.spyOn(updateAcessTokenRepositoryStub, 'update').mockReturnValueOnce(
+      new Promise((res, rej) => rej(new Error()))
+    )
+    const accessToken = sut.auth(makeFakeAuthentication())
+    expect(accessToken).rejects.toThrow()
   })
 })
