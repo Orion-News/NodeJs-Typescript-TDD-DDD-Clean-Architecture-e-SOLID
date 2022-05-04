@@ -1,5 +1,4 @@
 export * from '../add-account/db-add-account-protocols'
-export * from '../../protocols/db/load-account-by-email-repository'
-export * from '../../../presentation/controllers/login/login-protocols'
+export * from '../../protocols/db/account/index'
+export * from '../../../presentation/controllers/login/login-controllers-protocols'
 export * from '../../protocols/criptography'
-export * from '../../protocols/db/update-acess-token-repository'
