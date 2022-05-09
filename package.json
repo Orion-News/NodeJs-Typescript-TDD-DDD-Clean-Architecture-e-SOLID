@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": ">10.14.2"
+    "node": ">10.x"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.2.1",
