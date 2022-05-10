@@ -1,10 +1,8 @@
-FROM node:12
-
-WORKDIR /usr/src/clean-node-api
+FROM node:14
 
 COPY ./package.json .
 
-RUN yarn install --only=prod
+RUN yarn install
 
 # COPY ./dist ./dist
 

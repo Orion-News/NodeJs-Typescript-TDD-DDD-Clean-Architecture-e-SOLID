@@ -1,3 +1,13 @@
+import { config } from "dotenv";
+import { resolve } from "path";
+5;
+
+const path = resolve(__dirname, "..", "..", "..", ".env");
+
+console.log({ path });
+
+config({ path });
+
 export default {
   mongoUrl: process.env.MONGO_URL || "mongodb://mongo:27017/myFirstDatabase",
   port: process.env.PORT || 5050,
